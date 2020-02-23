@@ -1,0 +1,50 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*背景画像を選択*/
+.main-container{
+  background-image: url("/images/b031.gif");
+  height: 800px;
+  background-size: cover;
+}
+
+table{
+  width: 100%;
+}
+
+table th{
+  position: relative;
+  text-align: left;
+  width: 15%;
+}
+
+
+table td{
+  text-align: left;
+  width: 85%;
+}
+
+.link{
+position: relative;
+top: 100px;
+right: 0px;
+display: block;
+}
+
+
+input#number {
+    width: 150px;
+}
+
+input#cvc {
+    width: 120px;
+}
+
+input#exp_month {
+    width: 50px;
+}
+
+input#exp_year {
+    width: 100px;
+}

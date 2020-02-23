@@ -1,0 +1,21 @@
+<h1>Favoritesのお気に入りページ</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+
+			<% @favorites.each do |f| %>
+
+				<p><%= attachment_image_tag f.item, :image, :fill, 200, 200 %></p><br>
+				<p><%= f.item.name %></p><br>
+				<p><%= f.item.color %></p><br>
+				<p><%= f.item.body %></p><br>
+
+				<p><%= link_to '商品ページへ', item_path(f.item_id) %></p><br>
+
+				<p><%= link_to 'お気に入り解除', user_favorite_path(current_user.id, f.id), method: :delete %></p><br><br>
+
+			<% end %>
+		<div class="col-md-4">
+	</div>
+</div>

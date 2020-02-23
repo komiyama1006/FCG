@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row">
+
+    <%= flash[:error] %><br>
+    <%= flash[:description] %><br>
+
+    <%= form_with(url:homes_path, method: :post, local: true) do |f| %>
+      <form method="POST" action="/homes" id="charge-form">
+        <span class="charge-errors"></span>
+
+        <div class="card_info">
+
+          <h4>クレジットカード情報登録</h4>
+          <label>カード番号</label><br>
+          <%= f.text_field :number, maxlength: "16", placeholder: "半角数字のみ" %><br>
+
+          <label>CVC</label><br>
+          <%= f.text_field :cvc, maxlength: "4" ,placeholder: "カード裏面の数字" %><br>
+
+          <label>有効期限</label><br>
+          <%= f.text_field :exp_month, maxlength: "2", placeholder: "月" %>
+
+          <%= f.text_field :exp_year, maxlength: "4", placeholder: "西暦(例:2020)" %><br><br>
+
+          <%= f.submit "送信" %>
+
+        </div>
+      </form>
+
+    <% end %>
+  </div>
+</div>

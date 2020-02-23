@@ -1,0 +1,38 @@
+<h1>Homeのマイページ編集ページ</h1>
+
+<%= form_for(@user, url: home_path) do |f| %>
+
+  <table class="table my_table">
+    <tbody>
+      <tr>
+          <th class="panel my_panel">氏名</th>
+          <th class="my_text"><%= f.text_field :family_name, autofocus: true, autocomplete: "family_name"%> <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name"%></th>
+      </tr>
+      <tr>
+          <th class="panel my_panel">カナ</th>
+          <th class="my_text"><%= f.text_field :family_name_kana, autofocus: true, autocomplete: "family_name_kana" %> <%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana" %></th>
+      </tr>
+      <tr>
+          <th class="panel my_panel">郵便番号</th>
+          <th class="my_text"><%= f.number_field :post_number, autofocus: true, autocomplete: "post_number" %></th>
+      </tr>
+      <tr>
+          <th class="panel my_panel">住所</th>
+          <th class="my_text"><%= f.text_field :address, autofocus: true, autocomplete: "address" %></th>
+      </tr>
+      <tr>
+          <th class="panel my_panel">電話番号</th>
+          <th class="my_text"><%= f.text_field :tel, autofocus: true, autocomplete: "tel" %></th>
+      </tr>
+      <tr>
+          <th class="panel my_panel">メールアドレス</th>
+          <th class="my_text"><%= f.email_field :email, autofocus: true, autocomplete: "email" %></th>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="actions container edit-btn-pd">
+    <%= f.submit "編集内容を保存",class:"btn btn-primary center-block edit-btn" %>
+  </div>
+  
+<% end %>

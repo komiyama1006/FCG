@@ -1,0 +1,112 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* 検索ボックス */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "slick-theme";
+@import "slick";
+
+.navbar-header{
+  position: relative;
+}
+
+.nav-bar-nav{
+  padding-right: 0px;
+    padding-top: 50px;
+    margin-left: 950px;
+}
+
+dl.searchbox{
+  width: 350px;
+  position:relative;
+  background-color:#fff;
+  border:1px solid #aaa;
+  border-radius:6px;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+}
+dl.searchbox dt{
+  padding:3px;
+}
+dl.searchbox dt input{
+  width:70%;
+  height:30px;
+  line-height:30px;
+  background:none;
+  border:none;
+}
+dl.searchbox dd{
+  position:absolute;
+  top:1px;
+  right:1px;
+  width:30%;
+}
+.search-btn{
+  display:block;
+  background:#000080;
+  width:100%;
+  height:34px;
+  line-height:36px;
+  border:none;
+  border-radius: 0 6px 6px 0;
+  color:#FFF;
+}
+
+.search-btn:hover {
+  background:#228B22;
+}
+
+.navbar-header{
+  padding-right: 30px;
+}
+
+.container-fluid{
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* 下記、ページ全体の背景色を設定 */
+body{
+  background-image:image-url('backgroud_1.jpeg');
+}
+
+.size{
+  height: 500px;
+  width :100%;
+}
+
+.slick-dots {
+  li {
+    font-size: 20px !important;
+    button:before {
+      content: "♡" !important;
+      font-size: 14px !important;
+      color: rgb(60, 60, 60) !important;
+    }
+  }
+}
+
+dl.navbar-header{
+  padding:5px;
+}
+
+
+

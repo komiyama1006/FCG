@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+  <head>
+    <title>Free Choice Glasses</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <dl class="navbar-header">
+          <!-- 下記、root_pathにすると、slickが動かない -->
+          <%= link_to items_path do %>
+          <%= image_tag 'logo_01.png', :size => '200x100' %>
+          <% end %>
+        </dl>
+        <div class="searchbox">
+        <dl class="searchbox">
+          <%= search_form_for @search, url: '/items' do |f| %>
+            <dt><%= f.text_field :name_cont, placeholder: '検索したいキーワードを入力' %></dt>
+            <dd><%= f.submit ("検索"), class: 'search-btn' %></dd>
+          <% end %>
+        </dl>
+      </div>
+
+        <ul class="nav-bar-nav">
+          <% if admin_signed_in? %>
+            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+            <%= link_to "商品一覧", admin_items_path %>
+            <%= link_to "ジャンル一覧", admin_genres_path %>
+
+          <% elsif user_signed_in? %>
+            <%= link_to '商品ページ', items_path %>
+            <%= link_to 'お気に入り', user_favorites_path(current_user.id) %>
+            <%= link_to 'マイページ', home_path(current_user.id) %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+          <% else %>
+            <%= link_to "新規登録", new_user_registration_path %>
+            <%= link_to "ログイン", new_user_session_path %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <body>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+  </body>
+</html>

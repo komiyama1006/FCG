@@ -1,0 +1,68 @@
+<h1>Homeのshowページ</h1>
+
+
+<h1>MY PAGE</h1>
+
+<%= flash[:error] %><br>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8"></div>
+			<%= link_to 'カードの登録', new_home_path %>
+		<div class="col-md-2"></div>
+			<%= link_to '登録情報編集', edit_home_path %><br>
+	</div>
+
+	<div class="row">
+		<table class="table my_table">
+			<tr>
+				<th class="panel my_panel">氏名</th>
+				<th class="my_text"><%= @user.family_name %>  <%= @user.first_name %></th>
+			</tr>
+			<tr>
+				<th class="panel my_panel">カナ</th>
+				<th class="my_text"><%= @user.family_name_kana %>  <%= @user.first_name_kana %></th>
+			</tr>
+			<tr>
+				<th class="panel my_panel">郵便番号</th>
+				<th class="my_text"><%= @user.post_number %></th>
+			</tr>
+			<tr>
+				<th class="panel my_panel">住所</th>
+				<th class="my_text"><%= @user.address %></th>
+			</tr>
+			<tr>
+				<th class="panel my_panel">電話番号</th>
+				<th class="my_text"><%= @user.tel %></th>
+			</tr>
+			<tr>
+				<th class="panel my_panel">メールアドレス</th>
+				<th class="my_text"><%= @user.email %></th>
+			</tr>
+		</table>
+	</div>
+
+	<div class="row">
+		<table class="table my_table">
+				<% @on_rentals.each do |f| %>
+				<tr>
+					<th class="panel my_panel">画像</th>
+					<th class="panel my_panel">品番</th>
+					<th class="panel my_panel">カラー</th>
+					<th class="panel my_panel">内容</th>
+					<th class="panel my_panel">返却フォーム</th>
+					
+				</tr>
+				<tr>
+					<th class="my_text"><%= attachment_image_tag f.item, :image, :fill, 150, 150 %></th>
+					<th class="my_text"><%= f.item.name %></th>
+					<th class="my_text"><%= f.item.color %></th>
+					<th class="my_text"><%= f.item.body %></th>
+					<th class="my_text"><%= link_to '返却', rental_list_path(f.id), method: :delete %></th>
+				</tr>
+				
+				<% end %>
+	</div>
+
+</div>

@@ -1,0 +1,29 @@
+<h1>adminのレンタル商品詳細ページ</h1>
+
+<table align="center">
+	<caption>レンタル商品</caption>
+	<thead>
+		<tr>
+			<th><%= attachment_image_tag @frame, :image, :fill, 150, 150 %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @frame.name %></td>
+		</tr>
+		<tr>
+			<td><%= @frame.color %></td>
+		</tr>
+		<tr>
+			<td><%= @frame.body %></td>
+		</tr>
+
+	</tbody>
+</table>
+
+<div align="center">
+	<!-- 編集ページに遷移 -->
+	<%= link_to "編集", edit_admin_item_path %><br>
+
+	<%= link_to "削除", admin_item_path(@frame), method: :delete %><br>
+</div>

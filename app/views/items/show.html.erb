@@ -1,0 +1,45 @@
+<h1>userの商品詳細ページ</h1>
+
+<div class="container">
+	<% @frame.each do |c| %>
+		<div class="pa">
+			<%= attachment_image_tag c, :image, :fill, 300, 300 %><br><br>
+			<%= c.name %><br>
+			<%= c.color %><br>
+			<%= c.body %><br>
+
+			<!-- レンタル可能 -->
+			<!-- 下記、ジャンルが有効で、レンタル中本数が3本以下 -->
+			<% if c.genre.is_valid == true && current_user.rental_lists.count < 3 %>
+				<color-1>レンタル可能</color-1><br>
+
+					<%= form_for @rental do |b| %>
+						<%= b.hidden_field :item_id, :value => @item.id %>
+						<%= b.submit 'レンタルする' %><br><br>
+					<% end %>
+
+			<!-- レンタル不可能 -->
+			<!-- 下記、ジャンルが有効で、レンタル中本数が3本以上 -->
+			<% elsif c.genre.is_valid == true && current_user.rental_lists.count < 4 %>
+
+				<%= flash[:danger] %><br>
+
+			<!-- 下記、ジャンルが無効で、レンタル中本数が3本以下 -->
+			<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 3 %>
+
+				<%= flash[:sorry] %><br>
+
+			<!-- 下記、ジャンルが無効で、レンタル中本数が3本以上 -->
+			<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 4 %>
+
+				<%= flash[:bad] %><br>
+
+			<% end %>
+
+			<%= form_for(@favorite, url: '/users/current_user_id/favorites') do |f| %>
+				<%= f.hidden_field :item_id, :value => @item.id %>
+				<%= f.submit 'お気に入りに追加' %><br>
+			<% end %>
+		</div>
+	<% end %>
+</div>

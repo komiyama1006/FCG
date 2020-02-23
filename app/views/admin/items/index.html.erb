@@ -1,0 +1,34 @@
+<h1>adminのレンタル取扱商品一覧ページ</h1>
+
+<div class="container">
+	<table class="table table-bordered">
+		<thead style="background-color: #E0FFFF">
+			<tr>
+				<th>画像</th>
+				<th>品番</th>
+				<th>カラー</th>
+				<th>モデル</th>
+				<th>商品説明</th>
+				<th>詳しく見る</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @frames.each do |frame| %>
+				<tr>
+					<td><%= attachment_image_tag frame, :image, :fill, 150, 150 %></td>
+
+					<td><%= frame.name %></td>
+
+					<td><%= frame.color %></td>
+
+					<td><%= frame.genre.name %></td>
+
+					<td><%= frame.body %></td>
+
+					<td><%= link_to "詳細ページ", admin_item_path(frame.id) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

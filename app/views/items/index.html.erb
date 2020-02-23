@@ -1,0 +1,21 @@
+<h1>userの商品一覧ページ</h1>
+
+<div class="row">
+	<% @search_items.each do |g| %>
+		<div class="col-md-4">
+				<ps><%= attachment_image_tag g, :image, :fill, 200, 200 %></ps><br>
+
+					<ps><%= link_to g.name, item_path(g.id) %></ps><br>
+					<!-- 下記　integer型なので、表示できていない(あとでプルダウン式にする) -->
+					<ps><%= g.color %></ps><br>
+
+					<ps><%= g.genre.name %></ps><br>
+
+					<% if g.genre.is_valid == true %>
+						<ps>レンタル可能</ps><br><br>
+					<% else %>
+						<ps>レンタル不可</ps><br><br>
+					<% end %>
+		</div>
+	<% end %>
+</div>

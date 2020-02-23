@@ -1,0 +1,26 @@
+<h1>adminのレンタル商品編集ページ</h1>
+
+<%= form_for(@frame, url: "/admin/items/#{@frame.id}") do |f| %>
+
+	<h4>画像</h4>
+	<%= f.attachment_field :image %>
+
+	<h4>フレーム名(品番)</h4>
+	<%= f.text_field :name %>
+
+	<h4>カラー</h4>
+	<%= f.text_field :color %>
+
+	<h4>スペック</h4>
+	<%= f.text_area :body %>
+
+	<h4>ジャンル</h4>
+	<!-- mapを使って、ジャンルのをセレクトボタンで選択する -->
+	<%= f.select :genre_id, @genres.map{|g| [g.name, g.id] } %>
+
+	<h4>レンタルの状態</h4>
+	<!-- ここにboolean -->
+
+	<%= f.submit '保存' %>
+
+<% end %>
