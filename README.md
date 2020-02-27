@@ -1,6 +1,6 @@
 # README
 
-![FCG_LOGO](./images/logo_01.png)
+![FCG_LOGO](./app/assets/images/logo_01.png)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
