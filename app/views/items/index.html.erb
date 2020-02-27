@@ -6,7 +6,7 @@
 	<div class="row">
 		<% @search_items.each do |g| %>
 			<div class="col-md-4">
-				<ps><%= attachment_image_tag g, :image, :fill, 200, 200 %></ps><br>
+				<ps><%= attachment_image_tag g, :image, :fill, 350, 200 %></ps><br>
 
 					<ps><%= link_to g.name, item_path(g.id) %></ps><br>
 
