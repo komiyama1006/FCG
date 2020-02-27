@@ -48,3 +48,21 @@ input#exp_month {
 input#exp_year {
     width: 100px;
 }
+
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td{
+  padding: 3px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  width: 200px;
+}
+
+.bar-text {
+    font-size: 15px;
+}
+
+a.card {
+    font-size: 18px;
+    color: #333333;
+}

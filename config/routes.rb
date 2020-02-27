@@ -24,9 +24,8 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index, :create, :destroy]
   end
 
-  resources :homes, only: [:new, :create, :edit, :show, :update, :about, :top] do
+  resources :homes, only: [:new, :create, :edit, :show, :update] do
     collection do
-      # post :input
       post :subscription
     end
   end

@@ -1,11 +1,8 @@
-class HomesController < ApplicationController
+class HomesController < ApplicationController 
 	protect_from_forgery except: :set_search
 	require 'payjp'
 
 def top
-end
-
-def about
 end
 
 def new
@@ -85,12 +82,6 @@ def update
 	user.update(user_params)
 	redirect_to home_path
 end
-
-# def input
-# 	Payjp.api_key = 'sk_test_e9dd00f10b43ccea8d45dce8'
-# 	Payjp::Charge.create(currency: 'jpy', amount: 1500, card: params['payjp-token'])
-#   	redirect_to root_path, notice: "支払いが完了しました"
-# end
 
 private
  def user_params

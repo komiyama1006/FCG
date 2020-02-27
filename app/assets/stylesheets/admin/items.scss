@@ -4,5 +4,13 @@
 
 
 table, th, td{
-	width: auto!important;;
+	//width: auto!important;;
+}
+
+table {
+  width: 300px;
+}
+table,th,td {
+  border: 1px solid #bbb;
+  width: 200px;
 }

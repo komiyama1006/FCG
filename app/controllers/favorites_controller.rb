@@ -14,7 +14,11 @@ class FavoritesController < ApplicationController
 	def create
 		favorite = Favorite.new(favorites_params)
 		favorite.user_id = current_user.id
-		favorite.save
+		if favorite.save
+			flash[:success] = 'お気に入りに追加しました！'
+		else
+			flash[:danger] = 'お気に入り追加に失敗しました'
+		end
 		redirect_to items_path
 	end
 

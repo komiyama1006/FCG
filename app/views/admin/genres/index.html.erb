@@ -1,5 +1,5 @@
 <div class="container">
-	<h2>ジャンル追加・一覧画面</h2>
+	<h2>ジャンル追加・一覧</h2>
 	<%= form_for(@genre,url:"/admin/genres") do |f| %>
 		<b>ジャンル</b>
 		<%= f.text_field :name %>
@@ -27,7 +27,7 @@
 					<% @genres.each do |genre| %>
 						<tr>
 							<td>
-								<%= genre.name %>
+								<p><%= genre.name %></p>
 							</td>
 							<td>
 								<%if genre.is_valid == true %>

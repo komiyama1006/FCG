@@ -19,8 +19,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <dl class="navbar-header">
-          <!-- 下記、root_pathにすると、slickが動かない -->
-          <%= link_to items_path do %>
+          <%= link_to root_path do %>
           <%= image_tag 'logo_01.png', :size => '200x100' %>
           <% end %>
         </dl>
@@ -34,21 +33,26 @@
       </div>
 
         <ul class="nav-bar-nav">
-          <% if admin_signed_in? %>
-            <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
-            <%= link_to "商品一覧", admin_items_path %>
-            <%= link_to "ジャンル一覧", admin_genres_path %>
+          <div class="bar-text">
+            <% if admin_signed_in? %>
+              <h4><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+              <%= link_to "商品一覧", admin_items_path %>
+              <%= link_to "ジャンル一覧", admin_genres_path %>
+              <%= link_to "商品追加", new_admin_item_path %>
 
-          <% elsif user_signed_in? %>
-            <%= link_to '商品ページ', items_path %>
-            <%= link_to 'お気に入り', user_favorites_path(current_user.id) %>
-            <%= link_to 'マイページ', home_path(current_user.id) %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <% elsif user_signed_in? %>
+              <%= link_to '商品ページ', items_path %>
+              <%= link_to 'お気に入り', user_favorites_path(current_user.id) %>
+              <%= link_to "コンセプト", about_items_path %>
+              <%= link_to 'マイページ', home_path(current_user.id) %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 
-          <% else %>
-            <%= link_to "新規登録", new_user_registration_path %>
-            <%= link_to "ログイン", new_user_session_path %>
-          <% end %>
+            <% else %>
+              <%= link_to "新規登録", new_user_registration_path %>
+              <%= link_to "ログイン", new_user_session_path %>
+              <%= link_to "コンセプト", about_items_path %>
+            <% end %>
+          </div>
         </ul>
       </div>
     </div>
