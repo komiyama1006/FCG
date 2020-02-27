@@ -1,5 +1,7 @@
 # README
 
+![FCG_LOGO](./images/readme_logo.png)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
