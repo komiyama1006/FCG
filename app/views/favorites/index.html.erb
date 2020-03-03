@@ -15,5 +15,6 @@
 				<p><%= link_to 'お気に入り解除', user_favorite_path(current_user.id, f.id), method: :delete %></p><br><br>
 			</div>
 		<% end %>
+		<%= paginate @favorites, class: "paginate" %>
 	</div>
 </div>

@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
+	PER = 6
 
 	def index
-		@items = Item.all
+		@items = Item.page(params[:page]).reverse_order
 	end
 
 	def about
