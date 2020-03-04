@@ -1,4 +1,4 @@
-class HomesController < ApplicationController 
+class HomesController < ApplicationController
 	protect_from_forgery except: :set_search
 	require 'payjp'
 
@@ -33,7 +33,9 @@ def create
 
 	# 下記、顧客を登録
 	customer = Payjp::Customer.create(
-	  description: 'test',
+		# description: 'test',
+	  description: current_user.name,
+	  email: current_user.email,
 	  card: response
 	)
 
