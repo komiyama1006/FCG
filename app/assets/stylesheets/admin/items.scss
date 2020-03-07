@@ -3,14 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-table, th, td{
-	//width: auto!important;;
-}
 
-table {
-  width: 300px;
-}
 table,th,td {
   border: 1px solid #bbb;
   width: 200px;
+  text-align: center;
 }
