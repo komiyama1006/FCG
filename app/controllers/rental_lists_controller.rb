@@ -3,6 +3,7 @@ class RentalListsController < ApplicationController
 
 	# レンタル申請ボタンを押す際のアクション
 	def create
+		Payjp.api_key = 'sk_test_e9dd00f10b43ccea8d45dce8'
 		# 下記、クレジットカード登録しているかのif文(subscription_idがnilかどうか)
 		if current_user.subscription_id.nil?
 			flash[:error] = 'クレジットカード情報を入力してください！'

@@ -16,23 +16,21 @@ Rails.application.routes.draw do
     get '/items/top' => 'items#top'
 
     resources :items
-    resources :histories
     resources :genres, only: [:index, :create, :edit, :update]
     resources :users
   end
 
   resources :users do
-    resources :favorites
+    resources :favorites, only: [:index, :create, :destroy]
   end
 
-  resources :homes do
+  resources :homes, only: [:new, :create, :edit, :show, :update] do
     collection do
-      post :input
       post :subscription
     end
   end
 
-  resources :items do
+  resources :items, only: [:index, :show] do
     collection do
       get :thanks
       get :about

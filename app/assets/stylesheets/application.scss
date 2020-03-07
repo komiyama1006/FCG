@@ -28,7 +28,7 @@
 .nav-bar-nav{
   padding-right: 0px;
     padding-top: 50px;
-    margin-left: 950px;
+    margin-left: 800px;
 }
 
 dl.searchbox{
@@ -38,7 +38,7 @@ dl.searchbox{
   border:1px solid #aaa;
   border-radius:6px;
   position: absolute;
-  right: 0px;
+  right: 30px;
   top: 10px;
 }
 dl.searchbox dt{
@@ -88,6 +88,18 @@ body{
   background-image:image-url('backgroud_1.jpeg');
 }
 
+/*下記、thanksページの背景画像を調整している*/
+.thanks-back{
+  background-image: image-url("thanks.jpg");
+  height: 800px;
+  width:107%;
+  margin-left: -5%;
+  margin-top: -50px;
+  padding: 100px;
+  background-size:cover;
+}
+
+
 .size{
   height: 500px;
   width :100%;
@@ -106,6 +118,12 @@ body{
 
 dl.navbar-header{
   padding:5px;
+}
+
+ /*下記、各ページの文字フォントを変更*/
+.title{
+  font-size: 38px;
+  font-family: 'Times New Roman',serif;
 }
 
 

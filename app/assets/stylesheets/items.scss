@@ -23,10 +23,44 @@ ps{
 	display: inline-block;
   text-align: left;
   font-size: 20px;
+  font-family: 'Noto Serif JP', sans-serif;
 }
-
 
 .pa{
 	text-align: center;
   font-size: 20px;
+}
+
+.thanks-sentence{
+	text-align: center;
+  font-size: 10px;
+  font-family: 'Times New Roman',serif;
+  color: #FF5192;
+}
+
+.title{
+  text-align: center;
+  font-size: 40px;
+}
+
+pt{
+  text-align: center;
+  font-size: 20px;
+}
+
+.top-link {
+    line-height: 20px;
+    margin-top: 20px;
+    letter-spacing: 10px;
+}
+
+item{
+  font-size: 20px;
+}
+
+about {
+    font-size: 25px;
+    font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+    letter-spacing: 3px;
+    line-height: 2;
 }

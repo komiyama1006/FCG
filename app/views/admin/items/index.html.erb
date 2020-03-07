@@ -1,34 +1,36 @@
-<h1>adminのレンタル取扱商品一覧ページ</h1>
+<h1>取扱商品一覧</h1>
 
 <div class="container">
-	<table class="table table-bordered">
-		<thead style="background-color: #E0FFFF">
-			<tr>
-				<th>画像</th>
-				<th>品番</th>
-				<th>カラー</th>
-				<th>モデル</th>
-				<th>商品説明</th>
-				<th>詳しく見る</th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<% @frames.each do |frame| %>
+	<div class="row">
+		<table class="table table-bordered">
+			<thead style="background-color: #E0FFFF">
 				<tr>
-					<td><%= attachment_image_tag frame, :image, :fill, 150, 150 %></td>
-
-					<td><%= frame.name %></td>
-
-					<td><%= frame.color %></td>
-
-					<td><%= frame.genre.name %></td>
-
-					<td><%= frame.body %></td>
-
-					<td><%= link_to "詳細ページ", admin_item_path(frame.id) %></td>
+					<th><p>画像</p></th>
+					<th><p>品番</p></th>
+					<th><p>カラー</p></th>
+					<th><p>モデル</p></th>
+					<th><p>商品説明</p></th>
+					<th><p>詳しく見る</p></th>
 				</tr>
-			<% end %>
-		</tbody>
-	</table>
+			</thead>
+
+			<tbody>
+				<% @frames.each do |frame| %>
+					<tr>
+						<td><%= attachment_image_tag frame, :image, :fill, 300, 200 %></td>
+
+						<td><item><%= frame.name %></item></td>
+
+						<td><item><%= frame.color %></item></td>
+
+						<td><item><%= frame.genre.name %></item></td>
+
+						<td><item><%= frame.body %></item></td>
+
+						<td><item><%= link_to "詳細ページ", admin_item_path(frame.id) %></item></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>

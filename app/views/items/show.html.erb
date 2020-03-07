@@ -1,45 +1,48 @@
-<h1>userの商品詳細ページ</h1>
+<div class="title">フレーム詳細</div>
 
 <div class="container">
-	<% @frame.each do |c| %>
-		<div class="pa">
-			<%= attachment_image_tag c, :image, :fill, 300, 300 %><br><br>
-			<%= c.name %><br>
-			<%= c.color %><br>
-			<%= c.body %><br>
+	<div class="row">
+		<% @frame.each do |c| %>
+			<div class="pa">
+				<%= attachment_image_tag c, :image, :fill, 500, 228 %><br><br>
+				<%= c.name %><br>
+				<%= c.color %><br>
+				<%= c.body %><br>
 
-			<!-- レンタル可能 -->
-			<!-- 下記、ジャンルが有効で、レンタル中本数が3本以下 -->
-			<% if c.genre.is_valid == true && current_user.rental_lists.count < 3 %>
-				<color-1>レンタル可能</color-1><br>
 
-					<%= form_for @rental do |b| %>
-						<%= b.hidden_field :item_id, :value => @item.id %>
-						<%= b.submit 'レンタルする' %><br><br>
-					<% end %>
+				<!-- レンタル可能 -->
+				<!-- 下記、ジャンルが有効で、レンタル中本数が3本以下 -->
+				<% if c.genre.is_valid == true && current_user.rental_lists.count < 3 %>
+					<color-1>レンタル可能</color-1><br>
 
-			<!-- レンタル不可能 -->
-			<!-- 下記、ジャンルが有効で、レンタル中本数が3本以上 -->
-			<% elsif c.genre.is_valid == true && current_user.rental_lists.count < 4 %>
+						<%= form_for @rental do |b| %>
+							<%= b.hidden_field :item_id, :value => @item.id %>
+							<%= b.submit 'レンタルする' %><br><br>
+						<% end %>
 
-				<%= flash[:danger] %><br>
+				<!-- 以下、レンタル不可能 -->
+				<!-- 下記、ジャンルが有効で、レンタル中本数が3本以上 -->
+				<% elsif c.genre.is_valid == true && current_user.rental_lists.count < 4 %>
 
-			<!-- 下記、ジャンルが無効で、レンタル中本数が3本以下 -->
-			<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 3 %>
+					<p>3本レンタル中です。返却後、申請ください。</p><br>
 
-				<%= flash[:sorry] %><br>
+				<!-- 下記、ジャンルが無効で、レンタル中本数が3本以下 -->
+				<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 3 %>
 
-			<!-- 下記、ジャンルが無効で、レンタル中本数が3本以上 -->
-			<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 4 %>
+					<p>現在レンタルを見合わせ中。レンタル再開までお待ちください。</p><br>
 
-				<%= flash[:bad] %><br>
+				<!-- 下記、ジャンルが無効で、レンタル中本数が3本以上 -->
+				<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 4 %>
 
-			<% end %>
+					<p>現在、レンタル見合わせ中。また、レンタル本数が上限です。返却ください。</p><br>
 
-			<%= form_for(@favorite, url: '/users/current_user_id/favorites') do |f| %>
-				<%= f.hidden_field :item_id, :value => @item.id %>
-				<%= f.submit 'お気に入りに追加' %><br>
-			<% end %>
-		</div>
-	<% end %>
+				<% end %>
+
+				<%= form_for(@favorite, url: '/users/current_user_id/favorites') do |f| %>
+					<%= f.hidden_field :item_id, :value => @item.id %>
+					<%= f.submit 'お気に入りに追加' %><br>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
 </div>
