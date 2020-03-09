@@ -75,5 +75,7 @@ gem 'enum_help'
 gem 'ransack'
 gem 'payjp'
 gem 'dotenv-rails'
+group :production do
   gem 'mysql2'
+end
 
