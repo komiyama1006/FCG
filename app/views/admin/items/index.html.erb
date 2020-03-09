@@ -5,12 +5,16 @@
 		<table class="table table-bordered">
 			<thead style="background-color: #E0FFFF">
 				<tr>
-					<th><p>画像</p></th>
-					<th><p>品番</p></th>
-					<th><p>カラー</p></th>
-					<th><p>モデル</p></th>
-					<th><p>商品説明</p></th>
-					<th><p>詳しく見る</p></th>
+					<th><p1>画像</p1></th>
+					<th><p1>品番</p1></th>
+					<th><p1>カラー</p1></th>
+					<th><p1>モデル</p1></th>
+					<th><p1>レンズ横幅</p1></th>
+					<th><p1>天地幅</p1></th>
+					<th><p1>ブリッジ</p1></th>
+					<th><p1>テンプル</p1></th>
+					<th><p1>生産国</p1></th>
+					<th><p1>詳しく見る</p1></th>
 				</tr>
 			</thead>
 
@@ -25,7 +29,15 @@
 
 						<td><item><%= frame.genre.name %></item></td>
 
-						<td><item><%= frame.body %></item></td>
+						<td><item><%= frame.lens_width %></item></td>
+
+						<td><item><%= frame.lens_length %></item></td>
+
+						<td><item><%= frame.bridge %></item></td>
+
+						<td><item><%= frame.temple %></item></td>
+
+						<td><item><%= frame.production %></item></td>
 
 						<td><item><%= link_to "詳細ページ", admin_item_path(frame.id) %></item></td>
 					</tr>

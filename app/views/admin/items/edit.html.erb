@@ -14,8 +14,20 @@
 			<h4>カラー</h4>
 			<%= f.text_field :color %><br><br>
 
-			<h4>スペック</h4>
-			<%= f.text_area :body %><br><br>
+			<h4>レンズの横幅</h4>
+			<%= f.number_field :lens_width %><br><br>
+
+			<h4>天地幅</h4>
+			<%= f.number_field :lens_length %><br><br>
+
+			<h4>ブリッジ</h4>
+			<%= f.number_field :bridge %><br><br>
+
+			<h4>テンプル</h4>
+			<%= f.number_field :temple %><br><br>
+
+			<h4>生産国</h4>
+			<%= f.text_area :production %><br><br>
 
 			<h4>ジャンル</h4>
 			<!-- mapを使って、ジャンルのをセレクトボタンで選択する -->

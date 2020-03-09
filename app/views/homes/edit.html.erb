@@ -1,4 +1,6 @@
-<div class="title">MYPAGE EDIT</div>
+<div class="title">MYPAGE EDIT</div><br><br>
+
+<%= link_to '退会する', withdraw_homes_path ,class:"btn btn-danger",method: :delete ,data: { confirm: '本当に退会してよろしいでしょうか？' } %>
 
 <%= form_for(@user, url: home_path) do |f| %>
 
@@ -34,5 +36,6 @@
   <div class="actions container edit-btn-pd">
     <%= f.submit "編集内容を保存",class:"btn btn-primary center-block edit-btn" %>
   </div>
-  
+
+
 <% end %>

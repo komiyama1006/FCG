@@ -45,7 +45,8 @@ before_action :authenticate_admin!
 
 	private
 	def frame_params
-		params.require(:item).permit(:name, :color, :body, :image, :genre_id)
+		params.require(:item).permit(:name, :color, :image, :genre_id, :lens_width, :lens_length, :bridge, :production, :temple)
+
 	end
 
 end

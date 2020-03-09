@@ -16,7 +16,6 @@ class ItemsController < ApplicationController
 
 		@rental = RentalList.new
 		@likes = RentalList.all
-
 	end
 
 	def top

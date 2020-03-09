@@ -65,8 +65,6 @@ def create
 
 	end
 
-
-
 end
 
 def show
@@ -83,6 +81,15 @@ def update
 	user = User.find(current_user.id)
 	user.update(user_params)
 	redirect_to home_path
+end
+
+def destroy
+    @customer = current_user
+    @customer.destroy
+    redirect_to root_path
+end
+
+def withdraw
 end
 
 private

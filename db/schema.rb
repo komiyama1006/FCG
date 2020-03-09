@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_064128) do
 
   create_table "items", force: :cascade do |t|
     t.text "name"
-    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
@@ -57,6 +56,11 @@ ActiveRecord::Schema.define(version: 2020_02_22_064128) do
     t.integer "genre_id"
     t.boolean "on_rental", default: true, null: false
     t.string "color"
+    t.integer "lens_width"
+    t.integer "lens_length"
+    t.integer "bridge"
+    t.integer "temple"
+    t.string "production"
   end
 
   create_table "rental_lists", force: :cascade do |t|

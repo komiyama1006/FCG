@@ -5,9 +5,13 @@
 		<% @frame.each do |c| %>
 			<div class="pa">
 				<%= attachment_image_tag c, :image, :fill, 500, 228 %><br><br>
-				<%= c.name %><br>
-				<%= c.color %><br>
-				<%= c.body %><br>
+				<%= "品番：" %><%= c.name %><br>
+				<%= "カラー：" %><%= c.color %><br>
+				<%= "レンズの横幅：" %><%= c.lens_width %><%= " mm" %><br>
+				<%= "レンズの縦幅(天地幅)：" %><%= c.lens_length %><%= " mm" %><br>
+				<%= "間隔(ブリッジ)：" %><%= c.bridge %><%= " mm" %><br>
+				<%= "テンプル：" %><%= c.temple %><%= " mm" %><br>
+				<%= "生産国：" %><%= c.production %><br>
 
 
 				<!-- レンタル可能 -->
