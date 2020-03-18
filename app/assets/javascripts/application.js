@@ -17,7 +17,7 @@
 //= require_tree .
 //= require jquery_ujs
 
-
+// 下記、スライドショーの切り替わり設定
 $(function() {
     $('.top').slick({
         dots: true,

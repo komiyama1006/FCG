@@ -14,10 +14,24 @@ class RentalListsController < ApplicationController
 		@subscription = Payjp::Subscription.retrieve(current_user.subscription_id)
 
 		# pay.jpにあるレコードがactiveかを判断する。
-		return redirect_to home_path(current_user.id), error: '有効なカードでない可能性があります。別のカードを登録してください。' if @subscription.status != 'active'
 
+		# 下記は、後述if文で記述した。ただ、可読性が低くなるため書き直した。
+		# return redirect_to home_path(current_user.id), error: '有効なカードでない可能性があります。別のカードを登録してください。' if @subscription.status != 'active'
+
+		if @subscription.status != 'active'
+			flash[:error] = '有効なカードでない可能性があります。別のカードを登録してください。'
+			return redirect_to home_path(current_user.id)
+		end
+
+		# 下記は、後述if文で記述した。ただ、可読性が低くなるため書き直した。
 		# フラッシュでレンタル本数の注意を書く
-		return redirect_to root_path, danger: '3本以上レンタル中です。返却後、申請ください。' if current_user.rental_lists.count >= 3
+		# return redirect_to root_path, danger: '3本以上レンタル中です。返却後、申請ください。' if current_user.rental_lists.count >= 3
+
+		if current_user.rental_lists.count >= 3
+			flash[:danger] = '3本以上レンタル中です。返却後、申請ください。'
+			return redirect_to root_path
+		end
+
 
 		# レンタルリストに登録
 		rental = RentalList.new(rentals_params)

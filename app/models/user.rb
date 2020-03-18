@@ -22,4 +22,8 @@ class User < ApplicationRecord
   	favorite.destroy if favorite
   end
 
+  def following?(item)
+    self.followings.include?(item)
+  end
+
 end
