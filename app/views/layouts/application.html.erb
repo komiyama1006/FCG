@@ -37,10 +37,9 @@
         <label id="nav-open" for="nav-input"><span></span></label>
         <label class="nav-unshown" id="nav-close" for="nav-input"></label>
 
-
-        <ul class="nav-bar-nav">
-          <div class="bar-text">
-            
+        <div id="nav-content">
+          <ul class="nav-bar-nav">
+            <div class="bar-text">
               <% if admin_signed_in? %>
                 <%= link_to "商品一覧 ", admin_items_path %><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                 <%= link_to "ジャンル一覧 ", admin_genres_path %><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
@@ -59,9 +58,9 @@
                 <%= link_to "ログイン ", new_user_session_path %><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                 <%= link_to "コンセプト ", about_items_path %><span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
               <% end %>
-            
-          </div>
-        </ul>
+            </div>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
