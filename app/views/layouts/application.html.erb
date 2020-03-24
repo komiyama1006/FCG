@@ -50,6 +50,7 @@
                 <%= link_to '商品ページ ', items_path %><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                 <%= link_to 'お気に入り', user_favorites_path(current_user.id) %><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                 <%= link_to 'コンセプト', about_items_path %><span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+                <%= link_to '似合う眼鏡', choise_items_path %><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
                 <%= link_to 'マイページ ', home_path(current_user.id) %><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %><span class="glyphicon glyphicon-log-out logout head_item" aria-hidden="true"></span>
 
@@ -57,6 +58,7 @@
                 <%= link_to "新規登録 ", new_user_registration_path %><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 <%= link_to "ログイン ", new_user_session_path %><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
                 <%= link_to "コンセプト ", about_items_path %><span class="glyphicon glyphicon-exclamation-sign " aria-hidden="true"></span>
+                <%= link_to '似合う眼鏡', choise_items_path %><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
               <% end %>
             </div>
           </ul>
