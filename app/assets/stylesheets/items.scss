@@ -64,6 +64,11 @@ p1{
   font-size: 15px
 }
 
+/*2020/3/24 追加*/
+.point p {
+  font-size: 24px;
+}
+
 
 /*画面幅が767px以上の場合に適用(PC用)*/
 @media screen and (min-width: 767px)

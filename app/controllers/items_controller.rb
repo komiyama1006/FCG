@@ -24,6 +24,9 @@ class ItemsController < ApplicationController
 	def thanks
 	end
 
+	def choise
+	end
+
 	private
 
 	def favorites_params

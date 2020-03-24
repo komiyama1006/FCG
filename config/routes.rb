@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     collection do
       get :thanks
       get :about
+      get :choise
       post :rental
     end
   end
