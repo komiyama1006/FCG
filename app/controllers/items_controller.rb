@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+	before_action :authenticate_user!, only: [:show, :thanks]
 	PER = 6
 
 	def index
