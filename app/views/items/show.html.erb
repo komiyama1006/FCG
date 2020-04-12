@@ -13,8 +13,6 @@
 				<%= "テンプル：" %><%= c.temple %><%= " mm" %><br>
 				<%= "生産国：" %><%= c.production %><br>
 
-				
-
 				<!-- レンタル可能 -->
 				<!-- 下記、ジャンルが有効で、レンタル中本数が3本以下 -->
 				<% if c.genre.is_valid == true && current_user.rental_lists.count < 3 %>
