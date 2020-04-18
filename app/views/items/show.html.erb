@@ -32,7 +32,8 @@
 				<!-- 下記、ジャンルが無効で、レンタル中本数が3本以下 -->
 				<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 3 %>
 
-					<p>現在レンタルを見合わせ中。レンタル再開までお待ちください。</p><br>
+					<p>現在レンタルを停止しています。再開までお待ちください。</p><br>
+					<p>お気に入りに追加することで、次回手間を省略できます。ß</p><br>
 
 				<!-- 下記、ジャンルが無効で、レンタル中本数が3本以上 -->
 				<% elsif c.genre.is_valid == false && current_user.rental_lists.count < 4 %>
