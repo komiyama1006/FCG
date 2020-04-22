@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
     @search_items = @search.result.page(params[:page])
   end
 
+  #下記、新規登録の情報を顧客データとして登録と保存を同時に行っている。
   protected
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :first_name, :family_name, :first_name_kana, :family_name_kana, :email, :address, :tel, :post_number])
